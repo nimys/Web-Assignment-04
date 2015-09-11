@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jLayout & Lightbox</title>
+    
+    <!-- Normal style sheet used for layout and general formatting. -->
+    <link href="css/styles.css" type="text/css" rel="stylesheet">
+
+    <!-- HTML5 shim/shiv for HTML5 section element backward compatibility. -->
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    
+    <!-- jQuery library reference. Latest is always referenced from jQuery's CDN. -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+    
+    <!-- References to the jLayout plugin libraries. -->
+		<script type="text/javascript" src="js/jquery.sizes.js"></script>
+    <script type="text/javascript" src="js/jlayout.grid.js"></script>
+    <script type="text/javascript" src="js/jquery.jlayout.js"></script>
+		
+		<script type="text/javascript">
+			jQuery(function($)
+			{
+				$('.grid').layout();
+				$('.flex-grid').layout();
+				$('.column').layout();
+				$('.border').layout();
+	
+				// then we set the outer one to a fixed size, and turn resizing off
+				$('.nested').width(600).height(400).layout({resize: false});
+
+				// we can also specify everything in code; in this example
+				// we create two columns of equal size.
+				$('.code').layout({
+					type: 'grid', 
+					items: [
+						$('.col-1').width(400), 
+						$('.col-2').width(400)
+					], 
+				});
+			});
+		</script>
+		
+		<style>
+			.grid, .flex-grid, .column, .border, .mpb, .nested-center, .nested, .code, .horizontal, .vertical {
+				overflow: auto;
+			}
+		/* The width of the two columns are 390px */
+			.c {
+				width: 390px;
+				height: auto;
+				display: inline-block;
+			}
+		</style>
+		
+	</head>
+
+
+<body>
+	
+		<h1>Implementing jLayout & Lightbox</h1>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+		
+				<p>The jLayout plugin makes it easy to develop a two-column layout like this one (without using CSS)! This plugin also provides for 
+				many other layouts. Check them out <a href="http://www.bramstein.com/projects/jlayout/jquery-plugin.html">here</a>! There are a
+				huge variety of different layouts to use.</p>
+				<p>The drawback?</p>
+				<p>Getting comfortable and learning the functionality of jLayout. If you're already experienced with CSS, that still may
+					be the better way for you to go.</p>
+
+				<p>The Lightbox plugin can be used to open a large version of a thumbnail image. You can set this up for a single image or a
+					set of images. It's a great way to showcase an online portfolio.</p>
+				<p>Click on the image above to get a preview of Lightbox!</p>
+
+</body>
+</html>
